@@ -1,0 +1,73 @@
+<html>
+
+<head>
+    <title>Employer's SignUp</title>
+
+    <script language="JavaScript" type="text/javaScript">
+        function checkLength() {
+            if ( document.employer.phone.value.length!=11) { 
+            alert( "Enter valid phone"); 
+            return false; 
+        } 
+    } 
+        function checkMatch(){
+             if(document.employer.pass.value!=document.employer.cpass.value) 
+             { alert("New Password and Confirm new Password doesnt match"); 
+             return false; 
+    } 
+}
+
+
+function checkMail() {
+    if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(document.employer.email.value)))
+  {
+    alert("You have entered an invalid email address!");
+    return false;
+  }
+    //return (false)
+}
+function checkRequired(){
+    if(document.employer.name.value.length==0)
+    alert("enter name");
+}
+    </script>
+</head>
+
+<body>
+    <form name="employer" method="post" enctype="multipart/form-data">
+        <table>
+            <tr>
+                <p>
+                    <font color="blue" size="3"><b><u>Employers</u></b></font>
+                </p>
+            </tr>
+            <tr>
+                <td align="right">Name:</td>
+                <td><input typ="text" name="name" onblur="checkRequired()" /></td>
+            </tr>
+            <tr>
+                <td align="right">Email:</td>
+                <td><input typ="text" name="email" onblur="checkMail()" /></td>
+            </tr>
+            <tr>
+                <td align="right">Phone:</td>
+                <td><input typ="text" name="phone" onblur="checkLength()" /></td>
+            </tr>
+            <tr>
+                <td align="right">Password:</td>
+                <td><input typ="text" name="pass" /></td>
+            </tr>
+            <tr>
+                <td align="right">Confirm Password:</td>
+                <td><input typ="text" name="cpass" onblur="checkMatch()" /></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Signup" /></td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
